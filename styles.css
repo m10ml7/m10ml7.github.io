@@ -1,0 +1,252 @@
+/* Estilos generales */
+body,
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: large;
+    padding: 3%;
+}
+
+p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: large;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos de la imagen principal */
+.main-image {
+    position: relative;
+    /* Necesario para posicionar correctamente el contenido sobre la imagen */
+    height: 100vh;
+    /* Altura del 100% de la ventana visible */
+    background-image: url('images/bg-img.png');
+    background-size: cover;
+    /* Cubrir toda el área del contenedor */
+    background-position: center;
+    /* Centrar la imagen en el contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.main-image img {
+    display: none;
+    /* Ocultar la etiqueta img si se utiliza una imagen en el HTML */
+}
+
+
+.search-bar {
+    position: absolute;
+    top: 80%;
+    /* Centrar verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrar horizontalmente */
+    display: flex;
+    width: 40%;
+    /* Ancho aumentado */
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    /* El input ocupará el espacio disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+    border-color: #555;
+}
+
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.header {
+    border-bottom: 1px solid #E2E8F0;
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-color: #101010; */
+    background-color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
+    font-weight: 400;
+    /* color: #475569; */
+    color: #fff;
+    /* change */
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+.nav-logo {
+    /* font-size: 2.1rem; */
+    font-size: 3rem;
+    font-weight: 500;
+    /* color: #482ff7; */
+    color: #fff;
+}
+
+.carousel-img {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 430px;
+    margin: auto;
+}
+
+.carousel-img img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+.carousel-img img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+@media only screen and (max-width: 768px) {
+    .main-image {
+        height: 50vh;
+    }
+
+    .search-bar {
+        top: 75%;
+        left: 30%;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        /* background-color: #fff; */
+        background-color: #222;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .carousel-img {
+        width: 80%;
+        height: 50vh;
+    }
+}
