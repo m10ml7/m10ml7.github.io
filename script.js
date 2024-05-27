@@ -10,7 +10,7 @@ function mobileMenu() {
 }
 
 
-// when we click on hamburger icon its close 
+// Cuando se da click en el icono de hamburguesa se cierra  
 
 const navLink = document.querySelectorAll(".nav-link");
 
